@@ -12,7 +12,7 @@ int escolha, numfib, numfat;
 int fibonacci[50];
 int fatorial[20];
 
-setlocale(LC_ALL, "pt_BR.UTF-8");
+setlocale(LC_ALL, "Portuguese");
 
     printf("===== MENU DE EXERCÍCIOS =====\n");
     printf("1 - Sequência de Fibonacci;\n");
