@@ -6,7 +6,44 @@
 
 
 
+void verificarPalindromo() {
+    char palavra[101];
+    int i, tamanho;
+    int ehPalindromo = 1;
 
+    printf("Digite uma palavra: ");
+    scanf("%100s", palavra);
+
+    tamanho = strlen(palavra);
+    for (i = 0; i < tamanho / 2; i++) {
+        if (palavra[i] != palavra[tamanho - 1 - i]) {
+            ehPalindromo = 0;
+            break;
+        }
+    }
+
+    if (ehPalindromo) {
+        printf("A palavra e um palindromo.\n");
+    } else {
+        printf("A palavra nao e um palindromo.\n");
+    }
+}
+
+void verificarSubstring() {
+    char str1[101], str2[101];
+
+    printf("Digite a primeira string: ");
+    scanf("%100s", str1);
+
+    printf("Digite a segunda string: ");
+    scanf("%100s", str2);
+
+    if (strstr(str1, str2)) {
+        printf("A segunda string esta contida na primeira.\n");
+    } else {
+        printf("A segunda string nao esta contida na primeira.\n");
+    }
+}
 int main(){
 int escolha, numfib, numfat;
 int fibonacci[50];
@@ -67,11 +104,16 @@ case 2:
     for (int i = 1; i <= numfat; i++){
         printf("%d! = %d\n", i, fatorial[i]);
     }
-
+    break;
+case 3:
+    verificarPalindromo();
+    break;
+case 4:
+    verificarSubstring();
+    break;
 case 5:
     printf("Programa encerrado!");
     break;
-
     }
 return 0;
     }
